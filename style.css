@@ -1,4 +1,4 @@
-body, p , h1, h2,ul , li, blockquote {
+body, p , h1, h2,ul , li, blockquote, div {
   margin: 0px;
   padding: 0px;
 }
@@ -87,7 +87,6 @@ ul, li {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  background-color: chocolate;
 }
 
 .col-wide {
@@ -111,6 +110,87 @@ ul, li {
 
 .informacoes p + p {
   margin-top: 30px;
+}
+
+.titulo {
+  color: #b07dfb;
+}
+.titulo h1 {
+  font-size: 3.75em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.titulo span {
+  font-size: 0.875em;
+  font-style: italic;
+}
+
+.caracteristicas {
+  display: flex;
+  align-items: flex-start;
+}
+
+.caracteristicas > div {
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(55, 55, 55, 0.15);
+  position: relative;
+}
+
+.caracteristicas > div:first-child {
+  margin-right: 30px;
+}
+
+.caracteristicas span {
+  display: block;
+  color: #B07DFB;
+}
+.numero {
+  font-size: 3em;
+  line-height: 1;
+  margin: 10px auto;
+}
+.rotulo {
+background-color: #fff;
+border-radius: 0 0 5px 5px;
+padding: 5px 0;
+position: relative;
+top: 2px;
+}
+.destaque p{
+  font-size: 0.875em;
+  color: #b07dfb;
+  max-width: 16em;
+}
+
+.citacao , .atributos {
+  align-self: start;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(44 , 44 , 44, 0.15);
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
+}
+.citacao p {
+  color: #fff;
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.atributos li {
+  color: #fff;
+  font-size: 1.125em;
+  font-family: Courie, monospace;
+  padding: 15px;
+}
+
+.atributos li + li {
+  border-bottom: 2px solid #B07DFB ;
 }
 /*ANUNCIOS*/
 .ads {

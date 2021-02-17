@@ -10,6 +10,15 @@ a {
 ul, li {
  list-style: none;
 }
+body {
+  font-family: 'Vollkorn', serif;}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
 
 /* GRID GERAL*/
 .estrutura {
@@ -19,6 +28,28 @@ ul, li {
   "header header header"
   "sidenav content ads"
   "footer footer footer";
+}
+@media (max-width:1200px){
+  .estrutura {
+  grid-template-areas:
+  "header header header"
+  "sidenav content content"
+  "sidenav ads ads"
+  "footer footer footer"; 
+  }
+}
+
+@media (max-width:760px) {
+  .estrutura {
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "sidenav"
+    "content"
+    "ads"
+    "footer"
+    ;
+  }
 }
 
 /* HEADER */
@@ -56,6 +87,59 @@ ul, li {
 .header li + li {
   margin-left: 30px;
 }
+
+@media (max-width:760px){
+  .header {
+    grid-template-columns: auto;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .header nav a {
+    font-size: 1em;
+  }
+
+  .header li + li {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width:760px) {
+  .sidenav ul {
+    display: flex;
+  }
+
+  .sidenav  ul li {
+    flex: 1 0 60px;
+  }
+@keyframes seta {
+  from {
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
+  .sidenav {
+    padding: 0 30px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    position: relative;
+  }
+  .sidenav::after {
+    content: '→';
+    position: absolute;
+    top: 5px;
+    margin-right: 50%;
+    color: rgba(0, 0, 0, 0.3);
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
+  .sidenav ul li a {
+    margin: 30px 30px 30px 0;
+  }
+}
 /*SIDEVAV*/
 .sidenav {
   grid-area: sidenav;
@@ -87,6 +171,11 @@ ul, li {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+  }
 }
 
 .col-wide {
@@ -200,6 +289,7 @@ top: 2px;
   align-content: start;
   padding: 30px;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 
 }
 /*FOOTER*/
@@ -213,12 +303,4 @@ top: 2px;
   text-align: center;
   color: #fff;
   padding: 30px;
-}
-body {
-  font-family: 'Vollkorn', serif;}
-
-img {
-  display: block;
-  max-width: 100%;
-  border-radius: 5px;
 }
